@@ -1,0 +1,9 @@
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.csprojResolveAssemblyReference.cache
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.Form1.resources
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.Properties.Resources.resources
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.csproj.GenerateResource.Cache
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\bin\Debug\Fractal.exe.config
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\bin\Debug\Fractal.exe
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\bin\Debug\Fractal.pdb
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.exe
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.pdb
