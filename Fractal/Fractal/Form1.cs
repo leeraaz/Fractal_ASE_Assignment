@@ -33,7 +33,9 @@ namespace Fractal
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This is Madelbrot Version 1.0.0.1");
+            // MessageBox.Show("This is Madelbrot Version 1.0.0.1");
+            Form2 version = new Form2();
+            version.Show();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

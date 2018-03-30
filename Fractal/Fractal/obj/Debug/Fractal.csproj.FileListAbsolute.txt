@@ -7,3 +7,13 @@ F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\bin\Debug\Fractal.exe
 F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\bin\Debug\Fractal.pdb
 F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.exe
 F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.pdb
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\bin\Debug\Fractal.exe.config
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\obj\Debug\Fractal.exe
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\obj\Debug\Fractal.pdb
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\bin\Debug\Fractal.exe
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\bin\Debug\Fractal.pdb
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\obj\Debug\Fractal.csprojResolveAssemblyReference.cache
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\obj\Debug\Fractal.Form1.resources
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\obj\Debug\Fractal.Properties.Resources.resources
+E:\Fractal\Fractal_ASE_Assignment\Fractal\Fractal\obj\Debug\Fractal.csproj.GenerateResource.Cache
+F:\Softwarica\sem 5\ASE\New folder\Fractal\Fractal\obj\Debug\Fractal.Form2.resources
