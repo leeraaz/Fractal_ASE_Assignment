@@ -43,6 +43,23 @@ namespace Fractal
             Application.Exit();
         }
 
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog file = new SaveFileDialog();
+            file.Filter = "JPG(*.JPG | *.JPG";
+            if(file.ShowDialog() == DialogResult.OK)
+            {
+                picture.Save(file.FileName);
+            }
+        }
+
+        private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           // Close();
+           // start();
+            Application.Restart();
+        }
+
         private Rectangle rect;
       /*  public Form1()
         {
@@ -136,7 +153,7 @@ namespace Fractal
             //addMouseMotionListener(this);
             //c1 = new Cursor(Cursor.WAIT_CURSOR);
             //c2 = new Cursor(Cursor.CROSSHAIR_CURSOR);
-            c1 = Cursors.WaitCursor;
+            c1 = Cursors.Default;
             c2 = Cursors.Cross;
             //x1 = getsize().width;
             //y1 = getsize().height;
@@ -182,7 +199,7 @@ namespace Fractal
             Pen pen = new Pen(Color.White);
 
             action = false;
-            //this.Cursor = c1; // in java setCursor(c1)
+            this.Cursor = c1; // in java setCursor(c1)
             picBox1.Cursor = c2;
 
             //showStatus("Mandelbrot-Set will be produced - please wait..."); will do later
@@ -243,7 +260,7 @@ namespace Fractal
 
             if (rectangle)
             {
-                Pen pen = new Pen(Color.White);
+                Pen pen1 = new Pen(Color.Black);
 
                 Rectangle rect;
 
@@ -270,82 +287,11 @@ namespace Fractal
                     }
                 }
 
-                g.DrawRectangle(pen, rect);
+                g.DrawRectangle(pen1, rect);
                 picBox1.Image = tempPic;
 
             }
         }
     }
-       /*  class HSB
-    {
-
-        public float rChan, gChan, bChan;
-        public HSB()
-        {
-            rChan = gChan = bChan = 0;
-        }
-        public void fromHSB(float h, float s, float b)
-        {
-            float red = b;
-            float green = b;
-            float blue = b;
-            if (s != 0)
-            {
-                float max = b;
-                float dif = b * s / 255f;
-                float min = b - dif;
-
-                float h2 = 360f * 255f;
-
-                if (h2 < 60f)
-                {
-                    red = max;
-                    green = h2 * dif / 60f + min;
-                    blue = min;
-                }
-                else if (h2 < 120f)
-                {
-                    red = -(h2 - 120f) * dif / 60f + min;
-                    green = max;
-                    blue = min;
-                }
-                else if (h2 < 180f)
-                {
-                    red = min;
-                    green = max;
-                    blue = (h2 - 120f) * dif / 60f + min;
-                }
-                else if (h2 < 240f)
-                {
-                    red = min;
-                    green = -(h2 - 240f) * dif / 60f + min;
-                    blue = max;
-                }
-                else if (h2 < 300f)
-                {
-                    red = (h2 - 240f) * dif / 60f + min;
-                    green = min;
-                    blue = max;
-                }
-                else if (h2 <= 360f)
-                {
-                    red = max;
-                    green = min;
-                    blue = -(h2 - 360f) * dif / 60 + min;
-                }
-                else
-                {
-                    red = 0;
-                    green = 0;
-                    blue = 0;
-                }
-            }
-
-            rChan = (float)Math.Round(Math.Min(Math.Max(red, 0f), 255));
-            gChan = (float)Math.Round(Math.Min(Math.Max(green, 0), 255));
-            bChan = (float)Math.Round(Math.Min(Math.Max(blue, 0), 255));
-
-        }
-    }*/
     
 }

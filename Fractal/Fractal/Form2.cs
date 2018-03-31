@@ -19,9 +19,14 @@ namespace Fractal
 
         public void pictureBox2_Load(object sender, EventArgs e)
         {
-           // HSB hsnd = new HSB();
+            //
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
