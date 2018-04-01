@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace Fractal
 {
-
     public partial class Form1 : Form
     {
         class HSB

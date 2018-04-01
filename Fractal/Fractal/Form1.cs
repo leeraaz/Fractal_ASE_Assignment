@@ -30,6 +30,7 @@ namespace Fractal
         private Cursor c1, c2;
         private HSB HSBcol;
         private Pen pen;
+        private int j;
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -55,9 +56,38 @@ namespace Fractal
 
         private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // Close();
-           // start();
-            Application.Restart();
+            // Close();
+            picBox1.Image = null;
+           start();
+            //Application.Restart();
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            j = 20;
+            mandelbrot();
+            Refresh();
+        }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            j = 50;
+            mandelbrot();
+            Refresh();
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            j = 190;
+            mandelbrot();
+            Refresh();
+        }
+
+        private void purpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            j = 220;
+            mandelbrot();
+            Refresh();
         }
 
         private Rectangle rect;
@@ -97,6 +127,7 @@ namespace Fractal
                 ye = e.Y;
                 rectangle = true;
                 picBox1.Refresh();
+                //picBox1.Invalidate();
             }
         }
 
@@ -137,7 +168,8 @@ namespace Fractal
                 yzoom = (yende - ystart) / (double)y1;
                 mandelbrot();
                 rectangle = false;
-                picBox1.Refresh();
+                       picBox1.Refresh();
+                //picBox1.Invalidate();
                 mouseDown = false;
             }
         }
@@ -227,34 +259,30 @@ namespace Fractal
                 }
                 //showStatus("Mandelbrot-Set ready - please select zoom area with pressed mouse.");
                 Cursor.Current = c1;
-                action = true;
             }
 
             picBox1.Image = picture;
+                action = true;
         }
 
         private float pointcolour(double xwert, double ywert) // color value from 0.0 to 1.0 by iterations
         {
             double r = 0.0, i = 0.0, m = 0.0;// real, imaginary, absolute value or distance
-            int j = 0;
-
-            while ((j < MAX) && (m < 4.0))
+            int j2;
+            j2 = j;
+            while ((j2 < MAX) && (m < 4.0))
             {
-                j++;
+                j2++;
                 m = r * r - i * i; // x^2 - y^2
                 i = 2.0 * r * i + ywert; // 2xy + c
                 r = m + xwert;
             }
-            return (float)j / (float)MAX;
+            return (float)j2 / (float)MAX;
         }
 
         private void picBox1_Paint(object sender, PaintEventArgs e)
         {
-            update();
-        }
-
-        public void update()
-        {
+            // update();
             Image tempPic = Image.FromHbitmap(picture.GetHbitmap());
             Graphics g = Graphics.FromImage(tempPic);
 
@@ -291,6 +319,11 @@ namespace Fractal
                 picBox1.Image = tempPic;
 
             }
+        }
+
+        public void update()
+        {
+            
         }
     }
     

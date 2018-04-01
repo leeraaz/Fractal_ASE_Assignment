@@ -44,10 +44,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(395, 4);
+            this.textBox1.Location = new System.Drawing.Point(395, 193);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 400);
+            this.textBox1.Size = new System.Drawing.Size(117, 32);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "This is Mandelbrot Version 1.0.01";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
