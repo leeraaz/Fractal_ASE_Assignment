@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using System.Xml;
+using System.IO;
 
 namespace Fractal
 {
@@ -57,6 +59,11 @@ namespace Fractal
         private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Close();
+            String exists = "state.xml";
+            if (File.Exists(exists))
+            {
+                File.Delete("state.xml");
+            }
             picBox1.Image = null;
             start();
             //Application.Restart();
@@ -65,7 +72,7 @@ namespace Fractal
         private void blueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // j = 150;
-            j = 165;
+            j = 155;
             mandelbrot();
             Refresh();
         }
@@ -79,14 +86,14 @@ namespace Fractal
 
         private void redToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            j = 255;
+            j = 175;
             mandelbrot();
             Refresh();
         }
 
         private void purpleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            j = 220;
+            j = 200;
             mandelbrot();
             Refresh();
         }
@@ -100,10 +107,34 @@ namespace Fractal
 
         private void brownToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Color c1 = Color.FromArgb(165, 42, 42);
-         //   j = Convert.ToByte(c1);
+           Color brown = Color.FromArgb(165, 42, 42);
+            //   j = Convert.ToByte(c1);
+           // j = Convert.to(brown);
+          // j 
             mandelbrot();
             Refresh();
+        }
+
+        private void saveStateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                XmlWriter writer = XmlWriter.Create("state.xml");
+                writer.WriteStartDocument();
+                writer.WriteStartElement("states");
+                writer.WriteElementString("xstart", xstart.ToString());
+                writer.WriteElementString("ystart", ystart.ToString());
+                writer.WriteElementString("xzoom", xzoom.ToString());
+                writer.WriteElementString("yzoom", yzoom.ToString());
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+                writer.Flush();
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void picBox1_Load(object sender, EventArgs e)
@@ -213,10 +244,35 @@ namespace Fractal
         {
             action = false;
             rectangle = false;
-            initvalues();
-            xzoom = (xende - xstart) / (double)x1;
-            yzoom = (yende - ystart) / (double)y1;
-            mandelbrot();
+            String exists = "state.xml";
+            if (File.Exists(exists))
+            {
+                try
+                {
+                    XmlDocument state = new XmlDocument();
+                    state.Load("state.xml");
+                    foreach (XmlNode node in state)
+                    {
+                        xstart = Convert.ToDouble(node["xstart"]?.InnerText);
+                        ystart = Convert.ToDouble(node["ystart"]?.InnerText);
+                        xzoom = Convert.ToDouble(node["xzoom"]?.InnerText);
+                        yzoom = Convert.ToDouble(node["yzoom"]?.InnerText);
+                    }
+                    mandelbrot();
+                    Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                initvalues();
+                xzoom = (xende - xstart) / (double)x1;
+                yzoom = (yende - ystart) / (double)y1;
+                mandelbrot();
+            }
         }
 
         

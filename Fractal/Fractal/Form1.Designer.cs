@@ -36,15 +36,15 @@
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorPatternToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colorCyclingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.picBox1 = new System.Windows.Forms.PictureBox();
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.purpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorCyclingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,7 @@
             this.saveStateToolStripMenuItem.Name = "saveStateToolStripMenuItem";
             this.saveStateToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.saveStateToolStripMenuItem.Text = "Save State";
+            this.saveStateToolStripMenuItem.Click += new System.EventHandler(this.saveStateToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem1
             // 
@@ -121,32 +122,6 @@
             this.colorPatternToolStripMenuItem.Name = "colorPatternToolStripMenuItem";
             this.colorPatternToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.colorPatternToolStripMenuItem.Text = "Color Pattern";
-            // 
-            // colorCyclingToolStripMenuItem
-            // 
-            this.colorCyclingToolStripMenuItem.Name = "colorCyclingToolStripMenuItem";
-            this.colorCyclingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.colorCyclingToolStripMenuItem.Text = "Color Cycling";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // picBox1
-            // 
-            this.picBox1.Location = new System.Drawing.Point(-1, 28);
-            this.picBox1.Name = "picBox1";
-            this.picBox1.Size = new System.Drawing.Size(611, 465);
-            this.picBox1.TabIndex = 0;
-            this.picBox1.TabStop = false;
-            this.picBox1.Click += new System.EventHandler(this.picBox1_Click);
-            this.picBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.picBox1_Paint);
-            this.picBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picBox1_MouseDown);
-            this.picBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picBox1_MouseMove);
-            this.picBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picBox1_MouseUp);
             // 
             // blueToolStripMenuItem
             // 
@@ -196,6 +171,32 @@
             this.brownToolStripMenuItem.Text = "Brown";
             this.brownToolStripMenuItem.Click += new System.EventHandler(this.brownToolStripMenuItem_Click);
             // 
+            // colorCyclingToolStripMenuItem
+            // 
+            this.colorCyclingToolStripMenuItem.Name = "colorCyclingToolStripMenuItem";
+            this.colorCyclingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colorCyclingToolStripMenuItem.Text = "Color Cycling";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // picBox1
+            // 
+            this.picBox1.Location = new System.Drawing.Point(-1, 28);
+            this.picBox1.Name = "picBox1";
+            this.picBox1.Size = new System.Drawing.Size(611, 465);
+            this.picBox1.TabIndex = 0;
+            this.picBox1.TabStop = false;
+            this.picBox1.Click += new System.EventHandler(this.picBox1_Click);
+            this.picBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.picBox1_Paint);
+            this.picBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picBox1_MouseDown);
+            this.picBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picBox1_MouseMove);
+            this.picBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picBox1_MouseUp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,7 +206,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Mandelbrot";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
