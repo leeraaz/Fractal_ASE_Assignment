@@ -43,13 +43,16 @@ namespace Fractal
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(MessageBox.Show("Are you sure you want to Exit?","Exit",MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog file = new SaveFileDialog();
-            file.Filter = "JPG(*.JPG | *.JPG";
+            file.Filter = "JPG Image(*.JPG | *.JPG |PNG Image(*.png) | *.png";
             if(file.ShowDialog() == DialogResult.OK)
             {
                 picture.Save(file.FileName);
@@ -72,7 +75,7 @@ namespace Fractal
         private void blueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // j = 150;
-            j = 155;
+            j = 135;
             mandelbrot();
             Refresh();
         }
@@ -86,7 +89,7 @@ namespace Fractal
 
         private void redToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            j = 175;
+            j = 0;
             mandelbrot();
             Refresh();
         }
@@ -101,16 +104,6 @@ namespace Fractal
         private void orangeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             j = 15;
-            mandelbrot();
-            Refresh();
-        }
-
-        private void brownToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           Color brown = Color.FromArgb(165, 42, 42);
-            //   j = Convert.ToByte(c1);
-           // j = Convert.to(brown);
-          // j 
             mandelbrot();
             Refresh();
         }
@@ -137,14 +130,56 @@ namespace Fractal
             }
         }
 
+
+        private void versionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form2 version = new Form2();
+            version.Show();
+        }
+
+        private void speed1xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (j = 0; j <= 30; j++)
+            {
+                mandelbrot();
+                Refresh();
+            }
+        }
+
+        private void speed2XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (j = 10; j <= 100; j++)
+            {
+                mandelbrot();
+                Refresh();
+            }
+        }
+
+        private void speed3XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (j = 20; j <= 240; j++)
+            {
+                mandelbrot();
+                Refresh();
+            }
+        }
+
+        private void aboutToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Mandelbrot Set " + Environment.NewLine + "Version 1.0.0.3 " + Environment.NewLine + 
+                            "All Rights reserved. "+ Environment.NewLine + 
+                             "Created and Modified by " + Environment.NewLine + 
+                             "LIRAJ MAHARJAN");
+        }
+
         private void picBox1_Load(object sender, EventArgs e)
         {
-            //HSB hhh = new HSB();
+            HSB hhh = new HSB();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         { 
-            HSB hsb = new HSB();
+         //   HSB hsb = new HSB();
         }
 
         private void picBox1_Click(object sender, EventArgs e)
@@ -219,7 +254,6 @@ namespace Fractal
                 mouseDown = false;
             }
         }
-
         public Form1()
         {
             InitializeComponent();

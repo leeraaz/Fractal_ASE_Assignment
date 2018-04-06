@@ -51,7 +51,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 123);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Mandelbrot Version 1.0.0.2";
+            this.label1.Text = "Mandelbrot Version 1.0.0.3";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form2
